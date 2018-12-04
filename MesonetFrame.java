@@ -14,6 +14,9 @@ public class MesonetFrame extends JFrame {
 	/** Create the black border **/
 	protected static Border blackline = BorderFactory.createLineBorder(Color.BLACK);
 
+	/** Create a color for the back Panels (New custom color) **/
+	protected static final Color BACK = new Color(220, 220, 220);
+
 	/** Panel to hold the Parameters and the Statistics choices **/
 	JPanel paramStat = new JPanel();
 
@@ -28,12 +31,13 @@ public class MesonetFrame extends JFrame {
 		paramStat.add(new StatisticsPanel());
 		add(paramStat, BorderLayout.WEST);
 
+		/** Add the panels to the frame from the other class **/
 		add(new TabelPanel(), BorderLayout.CENTER);
 		add(new BottomPanel(), BorderLayout.SOUTH);
 		add(new FileMenuBar("File"), BorderLayout.NORTH);
 
 		// Configure the frame
-		
+
 		setSize(900, 700);
 		setVisible(true);
 		setResizable(false);
@@ -44,8 +48,8 @@ public class MesonetFrame extends JFrame {
 	/**
 	 * This class is a subset class of the MesonetFrame class that will hold the
 	 * components of the file menu bar that will allow the user to choose a file to
-	 * calculate statistics on and exit the program. This class will also contain the
-	 * slogan for the program that is displayed just under the file menu bar
+	 * calculate statistics on and exit the program. This class will also contain
+	 * the slogan for the program that is displayed just under the file menu bar
 	 * 
 	 * @author Matthew Klopfer
 	 *
@@ -58,17 +62,17 @@ public class MesonetFrame extends JFrame {
 		JMenu file = new JMenu("File");
 		JMenuItem getFile = new JMenuItem("Open Data File");
 		JMenuItem exit = new JMenuItem("Exit");
-		
+
 		/** JPanel to hold the slogan of our program **/
 		JPanel slogan = new JPanel();
-		
+
 		/** Slogan of the program **/
 		JLabel meso = new JLabel("Mesonet - We don't set records, we report them!");
 
 		public FileMenuBar(String title) {
 
 			setLayout(new GridLayout(2, 0));
-			
+
 			/** Set up the menu **/
 			// Change font of all menu components
 			getFile.setFont(timesRoman);
@@ -78,7 +82,8 @@ public class MesonetFrame extends JFrame {
 
 			// Add the slogan to the JPanel
 			slogan.add(meso);
-			
+			slogan.setBackground(Color.GRAY); // Set the color of the slogan label
+
 			// Add menu components to the menu bar
 			file.add(getFile);
 			file.add(exit);

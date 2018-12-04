@@ -35,6 +35,11 @@ public class StatisticsPanel extends JPanel {
 		add(ave).setFont(MesonetFrame.timesRoman);
 		add(max).setFont(MesonetFrame.timesRoman);
 		
+		// Set the background colors of the buttons
+		min.setBackground(Color.LIGHT_GRAY);
+		ave.setBackground(Color.LIGHT_GRAY);
+		max.setBackground(Color.LIGHT_GRAY);
+		
 		/** Add the JRadioButtons to the ButtonGroup **/
 		stats.add(min);
 		stats.add(ave);

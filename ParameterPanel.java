@@ -38,6 +38,14 @@ public class ParameterPanel extends JPanel {
 		setLayout(new GridLayout(5, 0));
 		setBorder(parameter);
 		
+		// Set the colors of the JRadioButtons and the panel background
+		//setBackground(Color.LIGHT_GRAY);
+		TAIR.setBackground(MesonetFrame.BACK);
+		TA9M.setBackground(MesonetFrame.BACK);
+		SRAD.setBackground(MesonetFrame.BACK);
+		WSPD.setBackground(MesonetFrame.BACK);
+		PRES.setBackground(MesonetFrame.BACK);
+		
 		/** Add all of the components of the JPanel **/
 		add(TAIR).setFont(MesonetFrame.timesRoman);
 		add(TA9M).setFont(MesonetFrame.timesRoman);
